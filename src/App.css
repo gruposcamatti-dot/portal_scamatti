@@ -1,38 +1,257 @@
-.App {
-  text-align: center;
+/* Importando a fonte Poppins do Google */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+  --primary-dark: #0f172a;
+  --primary-blue: #2563eb;
+  --accent: #06b6d4;
+  --text-dark: #1e293b;
+  --text-light: #94a3b8;
+  --white: #ffffff;
+  --glass-bg: rgba(255, 255, 255, 0.95);
+  --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.2);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f1f5f9;
+  color: var(--text-dark);
 }
 
-.App-header {
-  background-color: #282c34;
+/* --- Layout Geral --- */
+.app-container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+/* --- Tela de Login --- */
+.login-bg {
+  /* Gradiente moderno e profissional */
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.login-card {
+  background: var(--white);
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  animation: slideUp 0.6s ease-out;
+}
+
+.logo-text {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 0.5rem;
+}
+
+.logo-highlight {
+  color: var(--primary-blue);
+}
+
+.login-subtitle {
+  color: var(--text-light);
+  margin-bottom: 2rem;
+}
+
+.btn-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  background: var(--white);
+  border-radius: 8px;
+  font-weight: 600;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-login:hover {
+  background-color: #f8fafc;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* --- Dashboard --- */
+.dashboard-bg {
+  background-color: #f8fafc;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: var(--white);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--primary-dark);
+}
+
+.brand-highlight {
+  color: var(--accent);
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-info {
+  text-align: right;
+  display: none; /* Esconde em telas muito pequenas */
+}
+
+@media (min-width: 768px) {
+  .user-info { display: flex; flex-direction: column; }
+}
+
+.user-name { font-weight: 600; font-size: 0.9rem; }
+.user-email { font-size: 0.8rem; color: var(--text-light); }
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+}
+
+.btn-logout {
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid #ef4444;
+  color: #ef4444;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-logout:hover {
+  background: #ef4444;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* --- Conteúdo Principal --- */
+.main-content {
+  flex: 1;
+  padding: 3rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.welcome-title {
+  font-size: 2rem;
+  color: var(--primary-dark);
+  margin-bottom: 0.5rem;
+}
+
+.welcome-subtitle {
+  color: var(--text-light);
+  margin-bottom: 3rem;
+}
+
+.systems-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* --- Cartões dos Sistemas --- */
+.system-card {
+  background: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 1px solid #f1f5f9;
+}
+
+.system-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px -10px rgba(0,0,0,0.15);
+}
+
+.card-header {
+  height: 8px; /* Faixa colorida no topo */
+  width: 100%;
+}
+
+.card-body {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-body h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-dark);
+}
+
+.card-body p {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.btn-access {
+  margin-top: auto;
+  color: var(--primary-blue);
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-light);
+  font-size: 0.8rem;
+}
+
+/* --- Animação --- */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.loading-screen {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: var(--primary-blue);
 }
