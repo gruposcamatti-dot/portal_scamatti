@@ -115,41 +115,61 @@ body {
   text-shadow: 0 0 10px rgba(34, 211, 238, 0.3); /* Leve brilho */
 }
 
-/* Ajustes no texto do perfil para fundo escuro */
+/* --- CORREÇÃO DE ALINHAMENTO DO HEADER --- */
+
+.user-profile {
+  display: flex;
+  align-items: center; /* Garante que tudo fica alinhado no centro verticalmente */
+  gap: 20px; /* Espaço generoso entre o texto, a foto e o botão */
+}
+
+.user-info {
+  display: flex;        /* Ativa o modo flexível */
+  flex-direction: column; /* OBRIGATÓRIO: Coloca um item em cima do outro */
+  align-items: flex-end;  /* Alinha o texto à direita */
+  justify-content: center;
+  line-height: 1.2;     /* Melhora o espaçamento entre as linhas de texto */
+}
+
 .user-name { 
-  font-weight: 600; 
-  font-size: 0.9rem;
-  color: #ffffff; 
+  font-weight: 700; 
+  font-size: 1rem;
+  color: #ffffff;
+  white-space: nowrap; /* Impede que o nome quebre linha */
 }
 
 .user-email { 
   font-size: 0.8rem; 
-  color: rgba(255, 255, 255, 0.8); /* Branco com leve transparência */
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 2px; /* Pequeno espaço entre nome e email */
 }
 
 .avatar {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  border: 2px solid #ffffff; /* Borda branca na foto */
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  object-fit: cover; /* Garante que a imagem não fique esticada */
 }
 
-/* Botão Sair remodelado para o fundo azul */
 .btn-logout {
-  padding: 8px 16px;
-  background: rgba(255, 255, 255, 0.1); /* Fundo transparente (efeito vidro) */
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 8px 20px; /* Botão um pouco mais largo */
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   color: #ffffff;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
-  transition: 0.3s;
+  transition: all 0.2s ease;
+  height: 40px; /* Altura fixa para alinhar com o avatar */
+  display: flex;
+  align-items: center;
 }
 
 .btn-logout:hover {
-  background: #ffffff; /* Fica branco sólido ao passar o mouse */
-  color: #2563eb; /* Texto fica azul */
-  border-color: #ffffff;
+  background: #ffffff;
+  color: #2563eb;
+  transform: translateY(-1px);
 }
 
 /* --- Conteúdo Principal --- */
