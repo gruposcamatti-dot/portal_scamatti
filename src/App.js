@@ -39,7 +39,7 @@ function App() {
     return (
       <div className="app-container login-bg">
         <div className="login-card">
-          <h1 className="logo-text">SCAMATTI <span className="logo-highlight">PLATFORM</span></h1>
+          <h1 className="logo-text">PORTAL <span className="logo-highlight">SCAMATTI</span></h1>
           <p className="login-subtitle">Acesso centralizado aos sistemas internos</p>
           <button onClick={loginComGoogle} className="btn-login">
             <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" width="20" />
