@@ -71,7 +71,7 @@ function App() {
 
       <main className="main-content">
         <h2 className="welcome-title">Bem-vindo de volta! 👋</h2>
-        <p className="welcome-subtitle">Selecione o sistema que deseja aceder hoje.</p>
+        <p className="welcome-subtitle">Selecione o sistema que deseja acessar hoje.</p>
 
         <div className="systems-grid">
           {sistemas.map((sis) => (
@@ -86,7 +86,7 @@ function App() {
               <div className="card-body">
                 <h3>{sis.nome}</h3>
                 <p>{sis.descricao}</p>
-                <span className="btn-access">Aceder Sistema &rarr;</span>
+                <span className="btn-access">Acessar Sistema &rarr;</span>
               </div>
             </a>
           ))}
