@@ -56,7 +56,7 @@ function App() {
     return (
       <div className="app-container login-bg">
         <div className="login-card">
-          <h1 className="logo-text">HUB<span className="logo-highlight">SCAMATTI</span></h1>
+          <h1 className="logo-text">SCAMATTI <span className="logo-highlight">HUB</span></h1>
           <p className="login-subtitle">Acesso Restrito Corporativo</p>
           
           <form onSubmit={handleLogin} className="login-form">
