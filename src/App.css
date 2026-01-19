@@ -274,3 +274,54 @@ body {
   font-weight: 600;
   color: var(--primary-blue);
 }
+
+/* --- ADICIONAR NO FIM DO SEU CSS OU SUBSTITUIR A PARTE DO LOGIN --- */
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #f8fafc;
+  outline: none;
+  transition: all 0.3s;
+  font-family: 'Poppins', sans-serif;
+}
+
+.input-field:focus {
+  border-color: #2563eb;
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.error-msg {
+  color: #ef4444;
+  font-size: 0.9rem;
+  background: #fef2f2;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #fee2e2;
+}
+
+/* Avatar Placeholder (Círculo com a letra inicial, já que não temos foto do Google) */
+.avatar-placeholder {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+}

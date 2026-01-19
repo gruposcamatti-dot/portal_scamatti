@@ -1,8 +1,7 @@
 // src/firebaseConfig.js
 import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
 
-// Substitui estes valores pelos que copiaste do Console do Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyDEH_KYVt62F0KEuVh8qgZqu0SmjP7UKK8",
   authDomain: "portal-scamatti.firebaseapp.com",
@@ -14,14 +13,12 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
-export const provider = new GoogleAuthProvider();
 
-// Função auxiliar de Login
-export const loginComGoogle = () => {
-  return signInWithPopup(auth, provider);
+// Nova função de Login com Email e Senha
+export const loginComEmailSenha = (email, senha) => {
+  return signInWithEmailAndPassword(auth, email, senha);
 };
 
-// Função auxiliar de Logout
 export const fazerLogout = () => {
   return signOut(auth);
 };
