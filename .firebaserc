@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "portal-scamatti"
+  },
+  "targets": {
+    "portal-scamatti": {
+      "hosting": {
+        "portal": [
+          "portalscamattihub"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

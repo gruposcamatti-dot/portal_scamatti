@@ -81,7 +81,7 @@ function App() {
     return (
       <div className="app-container login-bg">
         <div className="login-card">
-          <h1 className="logo-text">SCAMATTI <span className="logo-highlight">PLATFORM</span></h1>
+          <h1 className="logo-text">SCAMATTI <span className="logo-highlight">HUB</span></h1>
           <p className="login-subtitle">Acesso Restrito Corporativo</p>
           <form onSubmit={handleLogin} className="login-form">
             <input 
@@ -121,7 +121,7 @@ function App() {
         {/* Mostra mensagem se não tiver permissões */}
         {sistemasVisiveis.length === 0 ? (
           <div style={{textAlign: 'center', color: '#666', marginTop: '50px'}}>
-            <p>Você não tem permissão para aceder a nenhum sistema.</p>
+            <p>Você não tem permissão para acessar a nenhum sistema.</p>
             <p>Solicite acesso ao administrador.</p>
           </div>
         ) : (
@@ -134,7 +134,7 @@ function App() {
                   <div className="card-body">
                     <h3>{sis.nome}</h3>
                     <p>{sis.descricao}</p>
-                    <span className="btn-access">Aceder Sistema &rarr;</span>
+                    <span className="btn-access">Acessar Sistema &rarr;</span>
                   </div>
                 </a>
               ))}
